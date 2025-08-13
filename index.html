@@ -53,9 +53,20 @@
     .btn.primary{background:var(--sage); color:#fff; box-shadow:var(--shadow)}
     .btn.primary:hover{background:var(--sage-700)}
     .hero-photo{aspect-ratio:4/3; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); background:#eef3ee}
-    .hero-photo {
+    /* container sizes the photo nicely but lets the image set its own height */
+.hero-photo{
+  width: min(420px, 45vw);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* the key bits */
+.hero-photo img{
   width: 100%;
-  height: auto;
+  height: auto;          /* let height follow width  */
+  object-fit: contain;   /* no cropping */
+  display: block;        /* remove inline-gap */
 }
 
 .hero-photo img {
