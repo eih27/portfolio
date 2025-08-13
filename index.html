@@ -4,72 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ehlaam Imran — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#ffffff;
-      --ink:#111418;           /* near-black text */
-      --muted:#6c7178;         /* subtle body */
-      --line:#e9edf1;          /* dividers */
-      --sage:#6c8a76;          /* accent */
-      --sage-700:#50715b;      /* accent hover */
-      --wrap:1024px;
-      --radius:14px;
-      --shadow:0 10px 30px rgba(17,20,24,.06);
+      --bg:#e5ede3;
+      --ink:#111418;
+      --muted:#5f666d;
+      --line:#d7dfd6;
+      --sage:#5f7f6a;
+      --sage-700:#476755;
+      --card:#ffffff;
+      --wrap:1040px;
+      --radius:16px;
+      --shadow:0 10px 28px rgba(17,20,24,.06);
     }
     *{box-sizing:border-box}
     html,body{margin:0}
     body{
+      background:var(--bg);
+      color:var(--ink);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink); background:var(--bg); line-height:1.7; font-size:18px;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      font-size:18px; line-height:1.7; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
     a{color:var(--sage); text-decoration:none}
-    a:hover{color:var(--sage-700); text-decoration:underline}
+    a:hover{text-decoration:underline; color:var(--sage-700)}
     .wrap{max-width:var(--wrap); margin:0 auto; padding:0 22px}
 
     /* Nav */
-    .nav{position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92);
-      backdrop-filter:saturate(120%) blur(6px); border-bottom:1px solid var(--line)}
+    .nav{position:sticky; top:0; z-index:10; background:rgba(229,237,227,.8); backdrop-filter:saturate(120%) blur(6px); border-bottom:1px solid var(--line)}
     .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{font:700 18px "Playfair Display", serif}
+    .brand{font:800 20px/1 Fraunces, serif}
     .links a{color:var(--ink); font-weight:600; margin-left:18px}
     .links a:hover{color:var(--sage)}
 
     /* Hero */
-    .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:64px 0}
-    .hero h1{font:800 44px/1.12 Inter, sans-serif; margin:0 0 10px}
-    .tag{color:var(--muted); margin:0 0 16px; max-width:52ch}
-    .bullets{list-style:none; padding:0; margin:0 0 18px}
-    .bullets li{margin:6px 0}
+    .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:54px 0}
+    .hero h1{font:800 44px/1.1 Fraunces, serif; margin:0 0 10px}
+    .tag{color:var(--muted); margin:0 0 16px; max-width:60ch}
     .cta-row{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-block; padding:12px 16px; border-radius:10px; font-weight:700; border:1px solid var(--line)}
-    .btn.primary{background:var(--sage); color:#fff; border-color:transparent}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:800; border:1px solid transparent}
+    .btn.primary{background:var(--sage); color:#fff; box-shadow:var(--shadow)}
     .btn.primary:hover{background:var(--sage-700)}
-    .btn.ghost{background:#fff; color:var(--ink)}
-    .btn.ghost:hover{border-color:#d7dde3}
-    .hero-photo{aspect-ratio:4/3; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#f4f7f5}
+    .hero-photo{aspect-ratio:4/3; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); background:#f1f5f2}
     .hero-photo img{width:100%; height:100%; object-fit:cover; display:block}
 
     /* Sections */
-    .section{padding:64px 0}
+    .section{padding:60px 0}
     .divider{border-top:1px solid var(--line)}
-    .section-head h2{font:800 28px/1.2 Inter, sans-serif; margin:0 0 6px}
+    .section-head h2{font:800 30px/1.2 Fraunces, serif; margin:0 0 6px}
     .sub{color:var(--muted); margin:0 0 18px}
 
     .grid.two{display:grid; gap:18px; grid-template-columns:1fr 1fr}
     @media (max-width:900px){ .hero{grid-template-columns:1fr} .grid.two{grid-template-columns:1fr} }
 
     .card{
-      background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px; box-shadow:var(--shadow);
+      background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; box-shadow:var(--shadow);
     }
     .card h3{margin:0 0 6px; font:700 18px/1.3 Inter, sans-serif; color:var(--sage)}
     .meta{color:var(--muted); font-size:14px; margin-top:6px}
     .list{margin:0; padding-left:20px}
     .list li{margin:6px 0}
 
+    /* Contact */
+    .contact{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .icon{width:18px; height:18px; display:inline-block; vertical-align:-3px; fill:#fff}
+    .icon-ghost{fill:var(--ink)}
+    .btn.ghost{background:#fff; color:var(--ink); border-color:#cfd7cf}
+    .btn.ghost:hover{border-color:#b8c2b8}
+
     /* Footer */
-    .footer{border-top:1px solid var(--line); color:#6b7380; padding:28px 0; text-align:center}
+    .footer{border-top:1px solid var(--line); color:#5f666d; padding:26px 0; text-align:center}
   </style>
 </head>
 <body>
@@ -78,9 +85,9 @@
     <div class="wrap nav-inner">
       <div class="brand">ehlaamimran.com</div>
       <nav class="links">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
         <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#reads">Reads</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -89,55 +96,48 @@
 
   <!-- HERO -->
   <section class="wrap hero" id="about">
-    <div class="hero-text">
+    <div>
       <h1>Ehlaam Imran</h1>
-      <p class="tag">I turn messy ideas into usable products. Dashboards at <a href="https://www.bayer.com" target="_blank" rel="noopener">Bayer</a>, a winning hardware prototype at Cornell, and an early Sufra app that moves surplus food to people who can use it.</p>
-      <ul class="bullets">
-        <li> 0→1: quick experiments, clear decisions, shipped outcomes</li>
-        <li> Data → simple dashboards teams actually use</li>
-        <li> Cross-functional glue: align, unblock, deliver</li>
-      </ul>
+      <p class="tag">I build useful things with clear writing, simple design, and just enough data. Most recently I have been prototyping Sufra to move surplus food to people who can use it.</p>
       <div class="cta-row">
-        <a href="#contact" class="btn primary">Work with me</a>
-        <a href="#projects" class="btn ghost">See work</a>
+        <a href="#contact" class="btn primary">
+          <!-- envelope icon -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+          Work with me!
+        </a>
       </div>
     </div>
-    <div class="https://drive.google.com/uc?export=view&id=1pujBob4i7I4GP1tJVixy3AkflmzIdVWa">
-      <!-- Replace with your actual image path if different -->
-      <img src="https://drive.google.com/uc?export=view&id=1pujBob4i7I4GP1tJVixy3AkflmzIdVWa" alt="Portrait of Ehlaam Imran">
+    <div class="hero-photo">
+      <!-- Your Google Drive headshot -->
+      <img src="https://drive.google.com/uc?export=view&id=1pujBob4i7I4GP1tJVixy3AkflmzIdVWa" alt="Portrait of Ehlaam Imran" />
     </div>
   </section>
 
-  <!-- PROJECTS (inspired by your deck: role • impact • learned) -->
+  <!-- EDUCATION FIRST -->
   <div class="divider"></div>
-  <section id="projects" class="wrap section">
+  <section id="education" class="wrap section">
     <div class="section-head">
-      <h2>Projects</h2>
-      <p class="sub">Highlights from recent builds</p>
+      <h2>Education</h2>
+      <p class="sub">Most recent first</p>
     </div>
 
-    <div class="grid two">
-      <article class="card">
-        <h3>Sufra — food redistribution app</h3>
-        <ul class="list">
-          <li><strong>What</strong>: APK-stage prototype that matches surplus meals with nearby recipients.</li>
-          <li><strong>My role</strong>: product & discovery — interviews, flows, fast iterations.</li>
-          <li><strong>Impact goal</strong>: reduce friction from “food available” → “food collected”.</li>
-          <li><strong>Status</strong>: customer discovery & pilot planning.</li>
-        </ul>
-        <div class="meta">Inspired by your project deck — focused, local, low-friction handoffs.</div>
-      </article>
+    <article class="card">
+      <h3>Cornell University</h3>
+      <ul class="list">
+        <li>Animal Health Hackathon winner for DeTicktor, then continued at <a href="https://www.revithaca.com/hardware/" target="_blank" rel="noopener">Rev Hardware Accelerator</a>.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>DeTicktor — hardware + AI</h3>
-        <ul class="list">
-          <li><strong>What</strong>: quick tick-detection prototype for pets (sensors + on-device ML).</li>
-          <li><strong>My role</strong>: product + experiments — scope, test, demo readiness.</li>
-          <li><strong>Win</strong>: Cornell Animal Health Hackathon — then into <a href="https://www.revithaca.com/hardware/" target="_blank" rel="noopener">Rev Hardware Accelerator</a>.</li>
-          <li><strong>Learned</strong>: keep the demo honest, the scope tight, and the story simple.</li>
-        </ul>
-      </article>
-    </div>
+    <article class="card">
+      <h3>University of Mumbai — B.Tech in Information Technology</h3>
+      <ul class="list">
+        <li>GPA 9.19 out of 10</li>
+        <li>Smart India Hackathon 2022 winner. Post: <a href="https://www.linkedin.com/posts/ehlaam-imran-524215189_smartindiahackathon2022-activity-6969691762084753408-NLAA/?utm_source=share&utm_medium=member_ios&rcm=ACoAACxZHawBAeWSV_vxFpAGPShzUb-TthS9lgI" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li>IEEE publication from undergraduate work. Paper: <a href="https://ieeexplore.ieee.org/document/10502646" target="_blank" rel="noopener">IEEE Xplore</a></li>
+        <li>Aavishkar research convention. Presented project at the Zonal Round hosted by the University of Mumbai and was selected for the final round.</li>
+        <li>Led Somaiya Debating Society, created content for the campus newspaper, and handled publicity for the Computer Society of India.</li>
+      </ul>
+    </article>
   </section>
 
   <!-- EXPERIENCE -->
@@ -150,49 +150,50 @@
     <article class="card">
       <h3><a href="https://www.bayer.com" target="_blank" rel="noopener">Bayer</a> — Data Analyst</h3>
       <ul class="list">
-        <li>Owned two Power BI dashboards end-to-end (requirements → build → launch) for global incident & compliance visibility.</li>
-        <li>Nominated for Baychamp (innovation). Fewer “where’s the data?” pings, faster decisions.</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Cornell University</h3>
-      <ul class="list">
-        <li>Won Animal Health Hackathon with <em>DeTicktor</em>; continued at <a href="https://www.revithaca.com/hardware/" target="_blank" rel="noopener">Rev Hardware Accelerator</a>.</li>
-        <li>IEEE publication: <a href="https://ieeexplore.ieee.org/document/10502646" target="_blank" rel="noopener">link</a>.</li>
-        <li>Smart India Hackathon 2022: my recap post <a href="https://www.linkedin.com/posts/ehlaam-imran-524215189_smartindiahackathon2022-activity-6969691762084753408-NLAA/?utm_source=share&utm_medium=member_ios&rcm=ACoAACxZHawBAeWSV_vxFpAGPShzUb-TthS9lgI" target="_blank" rel="noopener">on LinkedIn</a>.</li>
+        <li>Nominated for Baychamp award for innovation.</li>
+        <li>Owned two Power BI dashboards end to end for global incident and compliance visibility.</li>
       </ul>
     </article>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- PROJECTS -->
   <div class="divider"></div>
-  <section id="education" class="wrap section">
+  <section id="projects" class="wrap section">
     <div class="section-head">
-      <h2>Education</h2>
+      <h2>Projects</h2>
     </div>
-    <article class="card">
-      <h3>University of Mumbai — B.Tech IT (2019–2023)</h3>
-      <ul class="list">
-        <li>GPA 9.19/10</li>
-        <li>Smart India Hackathon 2022 winner; Aavishkar finalist</li>
-        <li>Led Somaiya Debating Society; campus newspaper content; CSI publicity</li>
-      </ul>
-    </article>
+
+    <div class="grid two">
+      <article class="card">
+        <h3><a href="https://suframumbai.framer.website/" target="_blank" rel="noopener">Sufra</a> — food redistribution app</h3>
+        <ul class="list">
+          <li>Simple mobile flows that connect donors with nearby recipients.</li>
+          <li>Current focus is customer discovery so the app ships with real-world traction.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://deticktor.framer.website/" target="_blank" rel="noopener">DeTicktor</a> — hardware plus AI</h3>
+        <ul class="list">
+          <li>Fast tick detection for pets using sensors and on-device machine learning.</li>
+          <li>Built at the Cornell Animal Health Hackathon and continued at Rev.</li>
+        </ul>
+      </article>
+    </div>
   </section>
 
   <!-- READS -->
   <div class="divider"></div>
   <section id="reads" class="wrap section">
     <div class="section-head">
-      <h2>Favourite Reads</h2>
-      <p class="sub">A few I keep recommending</p>
+      <h2>Favourite reads</h2>
+      <p class="sub">A few I keep recommending. The list gets refreshed from time to time.</p>
     </div>
     <div class="grid two">
       <ul class="card list">
         <li><em>The God of Small Things</em> — Arundhati Roy</li>
         <li>“Some Thoughts of the Common Toad” — George Orwell</li>
-        <li><em>Poor Economics</em> — Banerjee & Duflo</li>
+        <li><em>Poor Economics</em> — Banerjee and Duflo</li>
         <li><em>Naked Statistics</em> — Charles Wheelan</li>
       </ul>
       <ul class="card list">
@@ -209,12 +210,18 @@
   <div class="divider"></div>
   <section id="contact" class="wrap section">
     <div class="section-head">
-      <h2>Get in touch</h2>
-      <p class="sub">Open to product/analytics roles & interesting problems</p>
+      <h2>Contact</h2>
+      <p class="sub">Open to product and analytics roles and interesting problems</p>
     </div>
-    <div class="card" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
-      <a class="btn primary" href="mailto:eih27@cornell.edu">Email</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/ehlaam-imran-524215189" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="card contact">
+      <a class="btn primary" href="mailto:eih27@cornell.edu">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+        Email
+      </a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/ehlaam-imran-524215189" target="_blank" rel="noopener">
+        <svg class="icon icon-ghost" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8.5h4.9V24H.5zM8.5 8.5h4.7v2.1h.1c.7-1.3 2.4-2.6 4.9-2.6 5.2 0 6.1 3.4 6.1 7.8V24h-4.9v-6.8c0-1.6 0-3.7-2.3-3.7-2.3 0-2.6 1.7-2.6 3.5V24H8.5z"/></svg>
+        LinkedIn
+      </a>
     </div>
   </section>
 
