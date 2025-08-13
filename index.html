@@ -16,13 +16,18 @@
       --line:#cfd9cf;
       --sage:#5f7f6a;
       --sage-700:#476755;
+      --sage-light:#8fa894;
       --card:#ffffff;
       --wrap:1040px;
       --radius:16px;
       --shadow:0 10px 28px rgba(16,20,24,.06);
+      --shadow-hover:0 15px 35px rgba(16,20,24,.12);
+      --gradient:linear-gradient(135deg, var(--sage) 0%, var(--sage-700) 100%);
     }
+    
     *{box-sizing:border-box}
-    html,body{margin:0}
+    html,body{margin:0; padding:0}
+    
     body{
       font-family:'Open Sauce One', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:var(--bg);
@@ -31,70 +36,323 @@
       line-height:1.7;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
+      margin:0 20px;
+      padding-bottom:40px;
     }
-    a{color:var(--sage); text-decoration:none}
+    
+    a{color:var(--sage); text-decoration:none; transition:all 0.2s ease}
     a:hover{text-decoration:underline; color:var(--sage-700)}
-    .wrap{max-:var(--wrap); margin:0 auto; padding:0 22px}
+    
+    .wrap{
+      max-width:var(--wrap); 
+      margin:0 auto; 
+      padding:0 32px;
+      width:100%;
+    }
 
     /* Nav */
-    .nav{position:sticky; top:0; z-index:10; background:rgba(229,237,227,.86);
-         backdrop-filter:saturate(120%) blur(6px); border-bottom:1px solid var(--line)}
-    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{font-weight:800; letter-spacing:.2px}
-    .links a{color:var(--ink); font-weight:700; margin-left:18px}
-    .links a:hover{color:var(--sage)}
+    .nav{
+      position:sticky; 
+      top:0; 
+      z-index:10; 
+      background:rgba(229,237,227,.92);
+      backdrop-filter:saturate(120%) blur(12px); 
+      border-bottom:1px solid var(--line);
+      margin:0 -20px;
+    }
+    
+    .nav-inner{
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      height:72px;
+      max-width:var(--wrap);
+      margin:0 auto;
+      padding:0 32px;
+    }
+    
+    .brand{
+      font-weight:800; 
+      letter-spacing:.2px;
+      font-size:20px;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    
+    .links a{
+      color:var(--ink); 
+      font-weight:600; 
+      margin-left:24px;
+      padding:8px 16px;
+      border-radius:8px;
+      transition:all 0.2s ease;
+    }
+    .links a:hover{
+      color:var(--sage);
+      background:rgba(95,127,106,.08);
+      text-decoration:none;
+    }
 
     /* Hero */
-    .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:56px 0}
-    .hero h1{margin:0 0 10px; font-weight:800; font-size:44px; line-height:1.1}
-    .tag{color:var(--muted); margin:0 0 18px; max-:62ch}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:800; border:1px solid transparent}
-    .btn.primary{background:var(--sage); color:#fff; box-shadow:var(--shadow)}
-    .btn.primary:hover{background:var(--sage-700)}
-    .hero-photo{aspect-ratio:4/3; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); background:#eef3ee}
+    .hero{
+      display:grid; 
+      grid-template-columns:1.2fr 0.8fr; 
+      gap:48px; 
+      align-items:center; 
+      padding:80px 0 60px;
+      min-height:60vh;
+    }
+    
+    .hero h1{
+      margin:0 0 16px; 
+      font-weight:800; 
+      font-size:52px; 
+      line-height:1.1;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    
+    .tag{
+      color:var(--muted); 
+      margin:0 0 32px; 
+      max-width:62ch;
+      font-size:20px;
+      line-height:1.6;
+    }
+    
+    .cta-row{display:flex; gap:16px; flex-wrap:wrap}
+    
+    .btn{
+      display:inline-flex; 
+      align-items:center; 
+      gap:12px; 
+      padding:16px 24px; 
+      border-radius:12px; 
+      font-weight:700;
+      border:2px solid transparent;
+      transition:all 0.3s ease;
+      font-size:16px;
+      cursor:pointer;
+    }
+    
+    .btn.primary{
+      background:var(--gradient); 
+      color:#fff; 
+      box-shadow:var(--shadow);
+      border:2px solid transparent;
+    }
+    .btn.primary:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-hover);
+      text-decoration:none;
+    }
+    
+    .hero-photo{
+      aspect-ratio:3/4; 
+      border-radius:24px; 
+      overflow:hidden; 
+      box-shadow:var(--shadow);
+      background:var(--card);
+      transition:transform 0.3s ease;
+      max-width:320px;
+      margin-left:auto;
+    }
+    
+    .hero-photo:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-hover);
+    }
+    
     .hero-photo img {
-  width: auto;      /* keeps original image width */
-  height: 100%;     /* keeps original image height */
-  max-width: 100%;  /* so it doesn't overflow container */
-  object-fit: contain; /* shows full image without cropping */
-  display: block;
-}.hero-photo {
-  background: transparent; /* or match the section background color */
-}
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
     /* Sections */
-    .section{padding:60px 0}
-    .divider{border-top:1px solid var(--line)}
-    .section-head h2{margin:0 0 6px; font-weight:800; font-size:30px}
-    .sub{color:var(--muted); margin:0 0 18px}
+    .section{padding:80px 0}
+    .divider{border-top:1px solid var(--line); margin:0 -52px}
+    
+    .section-head{margin-bottom:40px}
+    .section-head h2{
+      margin:0 0 8px; 
+      font-weight:800; 
+      font-size:36px;
+      color:var(--sage-700);
+    }
+    .sub{color:var(--muted); margin:0; font-size:16px}
 
-    .grid.two{display:grid; gap:18px; grid-template-columns:1fr 1fr}
-    @media (max-width:900px){ .hero{grid-template-columns:1fr} .grid.two{grid-template-columns:1fr} }
+    .grid.two{
+      display:grid; 
+      gap:24px; 
+      grid-template-columns:1fr 1fr;
+    }
+    
+    @media (max-width:900px){ 
+      .hero{
+        grid-template-columns:1fr;
+        gap:32px;
+        text-align:center;
+      }
+      .hero-photo{
+        margin:0 auto;
+        max-width:280px;
+      }
+      .grid.two{grid-template-columns:1fr}
+      .wrap{padding:0 24px}
+      .nav-inner{padding:0 24px}
+      body{margin:0 16px}
+    }
 
     .card{
-      background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; box-shadow:var(--shadow);
+      background:var(--card); 
+      border:1px solid var(--line); 
+      border-radius:20px; 
+      padding:32px; 
+      box-shadow:var(--shadow);
+      transition:all 0.3s ease;
+      position:relative;
+      overflow:hidden;
     }
-    .card h3{margin:0 0 6px; font-weight:800; font-size:18px; color:var(--sage)}
-    .meta{color:var(--muted); font-size:14px; margin-top:6px}
-    .list{margin:0; padding-left:20px}
-    .list li{margin:6px 0}
+    
+    .card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      background:var(--gradient);
+      opacity:0;
+      transition:opacity 0.3s ease;
+    }
+    
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:var(--shadow-hover);
+    }
+    
+    .card:hover::before{
+      opacity:1;
+    }
+    
+    .card h3{
+      margin:0 0 12px; 
+      font-weight:800; 
+      font-size:20px; 
+      color:var(--sage-700);
+    }
+    
+    .card h3 a{
+      color:var(--sage-700);
+      transition:color 0.2s ease;
+    }
+    
+    .card h3 a:hover{
+      color:var(--sage);
+      text-decoration:none;
+    }
+    
+    .meta{color:var(--muted); font-size:14px; margin-top:8px}
+    
+    .list{margin:16px 0 0; padding-left:20px}
+    .list li{margin:8px 0; line-height:1.6}
 
     /* Contact */
-    .contact{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
-    .icon{width:18px; height:18px; display:inline-block; vertical-align:-3px; fill:#fff}
+    .contact{
+      display:flex; 
+      gap:16px; 
+      align-items:center; 
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    
+    .icon{width:20px; height:20px; display:inline-block; vertical-align:-3px; fill:#fff}
     .icon-ghost{fill:var(--ink)}
-    .btn.ghost{background:#fff; color:var(--ink); border-color:#cfd7cf}
-    .btn.ghost:hover{border-color:#b8c2b8}
+    
+    .btn.ghost{
+      background:var(--card); 
+      color:var(--ink); 
+      border:2px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .btn.ghost:hover{
+      border-color:var(--sage);
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-hover);
+      text-decoration:none;
+    }
+
+    /* Enhanced reads section */
+    .reads-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    
+    .reads-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:32px;
+      box-shadow:var(--shadow);
+      transition:all 0.3s ease;
+    }
+    
+    .reads-card:hover{
+      transform:translateY(-3px);
+      box-shadow:var(--shadow-hover);
+    }
+    
+    .reads-card h4{
+      margin:0 0 20px;
+      font-weight:700;
+      color:var(--sage-700);
+      font-size:18px;
+      border-bottom:2px solid var(--sage-light);
+      padding-bottom:8px;
+    }
 
     /* Footer */
-    .footer{border-top:1px solid var(--line); color:#5e666f; padding:26px 0; text-align:center}
+    .footer{
+      border-top:1px solid var(--line); 
+      color:var(--muted); 
+      padding:40px 0; 
+      text-align:center;
+      margin:40px -52px 0;
+      background:rgba(255,255,255,.3);
+    }
+
+    /* Fun animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .card, .hero > div {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .card:nth-child(2) { animation-delay: 0.1s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.3s; }
   </style>
 </head>
 <body>
   <!-- NAV -->
   <header class="nav">
-    <div class="wrap nav-inner">
+    <div class="nav-inner">
       <div class="brand">ehlaamimran.com</div>
       <nav class="links">
         <a href="#education">Education</a>
@@ -125,12 +383,11 @@
     </div>
   </section>
 
-  <!-- EDUCATION FIRST -->
+  <!-- EDUCATION -->
   <div class="divider"></div>
   <section id="education" class="wrap section">
     <div class="section-head">
       <h2>Education</h2>
-      <p class="sub">Most recent first</p>
     </div>
 
     <article class="card">
@@ -143,10 +400,10 @@
     <article class="card">
       <h3>University of Mumbai — B.Tech in Information Technology</h3>
       <ul class="list">
-        <li>GPA 9.19 out of 10</li>
-        <li>Smart India Hackathon 2022 winner. Post: <a href="https://www.linkedin.com/posts/ehlaam-imran-524215189_smartindiahackathon2022-activity-6969691762084753408-NLAA/?utm_source=share&utm_medium=member_ios&rcm=ACoAACxZHawBAeWSV_vxFpAGPShzUb-TthS9lgI" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li>IEEE publication from undergraduate work. Paper: <a href="https://ieeexplore.ieee.org/document/10502646" target="_blank" rel="noopener">IEEE Xplore</a></li>
-        <li>Aavishkar research convention. Presented at the Zonal Round hosted by the University of Mumbai and was selected for the final round.</li>
+        <li><strong>GPA:</strong> 9.19 out of 10</li>
+        <li><strong>Smart India Hackathon 2022 winner.</strong> Post: <a href="https://www.linkedin.com/posts/ehlaam-imran-524215189_smartindiahackathon2022-activity-6969691762084753408-NLAA/?utm_source=share&utm_medium=member_ios&rcm=ACoAACxZHawBAeWSV_vxFpAGPShzUb-TthS9lgI" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><strong>IEEE publication</strong> from undergraduate work. Paper: <a href="https://ieeexplore.ieee.org/document/10502646" target="_blank" rel="noopener">IEEE Xplore</a></li>
+        <li><strong>Aavishkar research convention.</strong> Presented at the Zonal Round hosted by the University of Mumbai and was selected for the final round.</li>
         <li>Led Somaiya Debating Society, created content for the campus newspaper, and handled publicity for the Computer Society of India.</li>
       </ul>
     </article>
@@ -162,8 +419,8 @@
     <article class="card">
       <h3><a href="https://www.bayer.com" target="_blank" rel="noopener">Bayer</a> — Data Analyst</h3>
       <ul class="list">
-        <li>Nominated for Baychamp award for innovation.</li>
-        <li>Owned two Power BI dashboards end to end for global incident and compliance visibility.</li>
+        <li><strong>Nominated for Baychamp award</strong> for innovation.</li>
+        <li>Owned two <strong>Power BI dashboards</strong> end-to-end for global incident and compliance visibility.</li>
       </ul>
     </article>
   </section>
@@ -187,7 +444,7 @@
       <article class="card">
         <h3><a href="https://deticktor.framer.website/" target="_blank" rel="noopener">DeTicktor</a> — hardware plus AI</h3>
         <ul class="list">
-          <li>Fast tick detection for pets using sensors and on device machine learning.</li>
+          <li>Fast tick detection for pets using sensors and on-device machine learning.</li>
           <li>Built at the Cornell Animal Health Hackathon and continued at Rev.</li>
         </ul>
       </article>
@@ -201,20 +458,26 @@
       <h2>Favourite reads</h2>
       <p class="sub">A few I keep recommending. The list is updated from time to time.</p>
     </div>
-    <div class="grid two">
-      <ul class="card list">
-        <li><em> The God of Small Things </em> — Arundhati Roy</li>
-        <li> “Some Thoughts of the Common Toad” — George Orwell</li>
-        <li><em> Poor Economics</em> — Banerjee and Duflo</li>
-        <li><em> Naked Statistics</em> — Charles Wheelan</li>
-      </ul>
-      <ul class="card list">
-        <li><em> Northanger Abbey</em> — Jane Austen</li>
-        <li><em> Persuasion</em> — Jane Austen</li>
-        <li><em> The Picture of Dorian Gray</em> — Oscar Wilde</li>
-        <li><em> The Partner</em> — John Grisham</li>
-        <li><em> The Firm</em> — John Grisham</li>
-      </ul>
+    <div class="reads-grid">
+      <div class="reads-card">
+        <h4>Fiction & Literature</h4>
+        <ul class="list">
+          <li><em>The God of Small Things</em> — Arundhati Roy</li>
+          <li>"Some Thoughts of the Common Toad" — George Orwell</li>
+          <li><em>Northanger Abbey</em> — Jane Austen</li>
+          <li><em>Persuasion</em> — Jane Austen</li>
+          <li><em>The Picture of Dorian Gray</em> — Oscar Wilde</li>
+        </ul>
+      </div>
+      <div class="reads-card">
+        <h4>Non-Fiction & Thrillers</h4>
+        <ul class="list">
+          <li><em>Poor Economics</em> — Banerjee and Duflo</li>
+          <li><em>Naked Statistics</em> — Charles Wheelan</li>
+          <li><em>The Partner</em> — John Grisham</li>
+          <li><em>The Firm</em> — John Grisham</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -237,6 +500,6 @@
     </div>
   </section>
 
-  <footer class="wrap footer">© 2025 Ehlaam Imran</footer>
+  <footer class="wrap footer">© 2025 Ehlaam Imran • <a href="https://ehlaamimran.com">ehlaamimran.com</a></footer>
 </body>
 </html>
