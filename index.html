@@ -53,23 +53,16 @@
     .btn.primary{background:var(--sage); color:#fff; box-shadow:var(--shadow)}
     .btn.primary:hover{background:var(--sage-700)}
     .hero-photo{aspect-ratio:4/3; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); background:#eef3ee}
-/* portrait-friendly box */
-.hero-photo{
-  width: min(420px, 45vw);
-  aspect-ratio: 3 / 4;   /* portrait ratio */
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
+    .hero-photo img {
+  width: auto;      /* keeps original image width */
+  height: auto;     /* keeps original image height */
+  max-width: 100%;  /* so it doesn't overflow container */
+  object-fit: contain; /* shows full image without cropping */
+  display: block;
+}.hero-photo {
+  background: transparent; /* or match the section background color */
 }
 
-/* cover + position so your face stays in frame */
-.hero-photo img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         /* fill without distortion */
-  object-position: 35% 50%;  /* move focus slightly left; tweak 25–45% */
-  display: block;
-}
     /* Sections */
     .section{padding:60px 0}
     .divider{border-top:1px solid var(--line)}
