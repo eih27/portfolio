@@ -3,83 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ehlaam Imran | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  
+  <title>Ehlaam Imran — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f7f9f7;       /* page background */
-      --bg-alt: #eff3ef;   /* alt section */
-      --text: #2f2f2f;     /* body text */
-      --primary: #3c5c49;  /* deep sage */
-      --accent: #768e70;   /* lighter sage */
+    :root{
+      --bg:#ffffff;
+      --ink:#111418;           /* near-black text */
+      --muted:#6c7178;         /* subtle body */
+      --line:#e9edf1;          /* dividers */
+      --sage:#6c8a76;          /* accent */
+      --sage-700:#50715b;      /* accent hover */
+      --wrap:1024px;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(17,20,24,.06);
     }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 18px; /* bigger base size */
-      line-height: 1.7;
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink); background:var(--bg); line-height:1.7; font-size:18px;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-      background: var(--bg);
+    a{color:var(--sage); text-decoration:none}
+    a:hover{color:var(--sage-700); text-decoration:underline}
+    .wrap{max-width:var(--wrap); margin:0 auto; padding:0 22px}
+
+    /* Nav */
+    .nav{position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(120%) blur(6px); border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{font:700 18px "Playfair Display", serif}
+    .links a{color:var(--ink); font-weight:600; margin-left:18px}
+    .links a:hover{color:var(--sage)}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:64px 0}
+    .hero h1{font:800 44px/1.12 Inter, sans-serif; margin:0 0 10px}
+    .tag{color:var(--muted); margin:0 0 16px; max-width:52ch}
+    .bullets{list-style:none; padding:0; margin:0 0 18px}
+    .bullets li{margin:6px 0}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-block; padding:12px 16px; border-radius:10px; font-weight:700; border:1px solid var(--line)}
+    .btn.primary{background:var(--sage); color:#fff; border-color:transparent}
+    .btn.primary:hover{background:var(--sage-700)}
+    .btn.ghost{background:#fff; color:var(--ink)}
+    .btn.ghost:hover{border-color:#d7dde3}
+    .hero-photo{aspect-ratio:4/3; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#f4f7f5}
+    .hero-photo img{width:100%; height:100%; object-fit:cover; display:block}
+
+    /* Sections */
+    .section{padding:64px 0}
+    .divider{border-top:1px solid var(--line)}
+    .section-head h2{font:800 28px/1.2 Inter, sans-serif; margin:0 0 6px}
+    .sub{color:var(--muted); margin:0 0 18px}
+
+    .grid.two{display:grid; gap:18px; grid-template-columns:1fr 1fr}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} .grid.two{grid-template-columns:1fr} }
+
+    .card{
+      background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px; box-shadow:var(--shadow);
     }
-    .hero-content {
-      display: flex;
-      gap: 4rem;
-      max-width: 1100px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .hero-content img {
-      max-width: 350px;
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-    .hero-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin: 0 0 1.5rem;
-      color: var(--primary);
-    }
-    .hero-text p {
-      font-size: 1.2rem;
-      max-width: 550px;
-    }
-    .hero-text a {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background: var(--primary);
-      color: #fff;
-      font-size: 1.1rem;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s;
-    }
-    .hero-text a:hover {
-      background: var(--accent);
-    }
+    .card h3{margin:0 0 6px; font:700 18px/1.3 Inter, sans-serif; color:var(--sage)}
+    .meta{color:var(--muted); font-size:14px; margin-top:6px}
+    .list{margin:0; padding-left:20px}
+    .list li{margin:6px 0}
+
+    /* Footer */
+    .footer{border-top:1px solid var(--line); color:#6b7380; padding:28px 0; text-align:center}
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="hero-content">
-      <img src="ehlaam-photo.jpg" alt="Ehlaam Imran">
-      <div class="hero-text">
-        <h1>Ehlaam Imran</h1>
-        <p>Product Manager & Builder. I create thoughtful, user-focused solutions that merge design, tech, and business. Always learning, iterating, and shipping.</p>
-        <a href="mailto:eih27@cornell.edu">Reach Out</a>
-      </div>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">ehlaamimran.com</div>
+      <nav class="links">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#reads">Reads</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
+
+  <!-- HERO -->
+  <section class="wrap hero" id="about">
+    <div class="hero-text">
+      <h1>Ehlaam Imran</h1>
+      <p class="tag">I turn messy ideas into usable products. Dashboards at <a href="https://www.bayer.com" target="_blank" rel="noopener">Bayer</a>, a winning hardware prototype at Cornell, and an early Sufra app that moves surplus food to people who can use it.</p>
+      <ul class="bullets">
+        <li>⚡ 0→1: quick experiments, clear decisions, shipped outcomes</li>
+        <li>📊 Data → simple dashboards teams actually use</li>
+        <li>🤝 Cross-functional glue: align, unblock, deliver</li>
+      </ul>
+      <div class="cta-row">
+        <a href="#contact" class="btn primary">Work with me</a>
+        <a href="#projects" class="btn ghost">See work</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- Replace with your actual image path if different -->
+      <img src="assets/user_photo.jpg" alt="Portrait of Ehlaam Imran">
+    </div>
+  </section>
+
+  <!-- PROJECTS (inspired by your deck: role • impact • learned) -->
+  <div class="divider"></div>
+  <section id="projects" class="wrap section">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <p class="sub">Highlights from recent builds</p>
+    </div>
+
+    <div class="grid two">
+      <article class="card">
+        <h3>Sufra — food redistribution app</h3>
+        <ul class="list">
+          <li><strong>What</strong>: APK-stage prototype that matches surplus meals with nearby recipients.</li>
+          <li><strong>My role</strong>: product & discovery — interviews, flows, fast iterations.</li>
+          <li><strong>Impact goal</strong>: reduce friction from “food available” → “food collected”.</li>
+          <li><strong>Status</strong>: customer discovery & pilot planning.</li>
+        </ul>
+        <div class="meta">Inspired by your project deck — focused, local, low-friction handoffs.</div>
+      </article>
+
+      <article class="card">
+        <h3>DeTicktor — hardware + AI</h3>
+        <ul class="list">
+          <li><strong>What</strong>: quick tick-detection prototype for pets (sensors + on-device ML).</li>
+          <li><strong>My role</strong>: product + experiments — scope, test, demo readiness.</li>
+          <li><strong>Win</strong>: Cornell Animal Health Hackathon — then into <a href="https://www.revithaca.com/hardware/" target="_blank" rel="noopener">Rev Hardware Accelerator</a>.</li>
+          <li><strong>Learned</strong>: keep the demo honest, the scope tight, and the story simple.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <div class="divider"></div>
+  <section id="experience" class="wrap section">
+    <div class="section-head">
+      <h2>Experience</h2>
+    </div>
+
+    <article class="card">
+      <h3><a href="https://www.bayer.com" target="_blank" rel="noopener">Bayer</a> — Data Analyst</h3>
+      <ul class="list">
+        <li>Owned two Power BI dashboards end-to-end (requirements → build → launch) for global incident & compliance visibility.</li>
+        <li>Nominated for Baychamp (innovation). Fewer “where’s the data?” pings, faster decisions.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Cornell University</h3>
+      <ul class="list">
+        <li>Won Animal Health Hackathon with <em>DeTicktor</em>; continued at <a href="https://www.revithaca.com/hardware/" target="_blank" rel="noopener">Rev Hardware Accelerator</a>.</li>
+        <li>IEEE publication: <a href="https://ieeexplore.ieee.org/document/10502646" target="_blank" rel="noopener">link</a>.</li>
+        <li>Smart India Hackathon 2022: my recap post <a href="https://www.linkedin.com/posts/ehlaam-imran-524215189_smartindiahackathon2022-activity-6969691762084753408-NLAA/?utm_source=share&utm_medium=member_ios&rcm=ACoAACxZHawBAeWSV_vxFpAGPShzUb-TthS9lgI" target="_blank" rel="noopener">on LinkedIn</a>.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- EDUCATION -->
+  <div class="divider"></div>
+  <section id="education" class="wrap section">
+    <div class="section-head">
+      <h2>Education</h2>
+    </div>
+    <article class="card">
+      <h3>University of Mumbai — B.Tech IT (2019–2023)</h3>
+      <ul class="list">
+        <li>GPA 9.19/10</li>
+        <li>Smart India Hackathon 2022 winner; Aavishkar finalist</li>
+        <li>Led Somaiya Debating Society; campus newspaper content; CSI publicity</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- READS -->
+  <div class="divider"></div>
+  <section id="reads" class="wrap section">
+    <div class="section-head">
+      <h2>Favourite Reads</h2>
+      <p class="sub">A few I keep recommending</p>
+    </div>
+    <div class="grid two">
+      <ul class="card list">
+        <li><em>The God of Small Things</em> — Arundhati Roy</li>
+        <li>“Some Thoughts of the Common Toad” — George Orwell</li>
+        <li><em>Poor Economics</em> — Banerjee & Duflo</li>
+        <li><em>Naked Statistics</em> — Charles Wheelan</li>
+      </ul>
+      <ul class="card list">
+        <li><em>Northanger Abbey</em> — Jane Austen</li>
+        <li><em>Persuasion</em> — Jane Austen</li>
+        <li><em>The Picture of Dorian Gray</em> — Oscar Wilde</li>
+        <li><em>The Partner</em> — John Grisham</li>
+        <li><em>The Firm</em> — John Grisham</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="divider"></div>
+  <section id="contact" class="wrap section">
+    <div class="section-head">
+      <h2>Get in touch</h2>
+      <p class="sub">Open to product/analytics roles & interesting problems</p>
+    </div>
+    <div class="card" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
+      <a class="btn primary" href="mailto:eih27@cornell.edu">Email</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/ehlaam-imran-524215189" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="wrap footer">© 2025 Ehlaam Imran</footer>
 </body>
 </html>
