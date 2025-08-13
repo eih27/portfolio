@@ -53,28 +53,23 @@
     .btn.primary{background:var(--sage); color:#fff; box-shadow:var(--shadow)}
     .btn.primary:hover{background:var(--sage-700)}
     .hero-photo{aspect-ratio:4/3; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); background:#eef3ee}
-    /* container sizes the photo nicely but lets the image set its own height */
+/* portrait-friendly box */
 .hero-photo{
   width: min(420px, 45vw);
+  aspect-ratio: 3 / 4;   /* portrait ratio */
   border-radius: 18px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-/* the key bits */
+/* cover + position so your face stays in frame */
 .hero-photo img{
   width: 100%;
-  height: auto;          /* let height follow width  */
-  object-fit: contain;   /* no cropping */
-  display: block;        /* remove inline-gap */
+  height: 100%;
+  object-fit: cover;         /* fill without distortion */
+  object-position: 35% 50%;  /* move focus slightly left; tweak 25–45% */
+  display: block;
 }
-
-.hero-photo img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
     /* Sections */
     .section{padding:60px 0}
     .divider{border-top:1px solid var(--line)}
