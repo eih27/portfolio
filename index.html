@@ -1,32 +1,29 @@
-nd<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ehlaam Imran — Portfolio</title>
 
-  <!-- Poppins font for friendlier, more approachable feel -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #fefbf8;
-      --dark: #2d3748;
-      --text: #4a5568;
-      --muted: #718096;
-      --light-gray: #e6e8eb;
-      --primary: #ed8936;
-      --primary-dark: #c05621;
-      --primary-light: #fef5ed;
-      --accent: #38b2ac;
-      --accent-light: #b2f5ea;
+      --bg: #fdf8f7;
+      --dark: #3d2c2e;
+      --text: #5e4549;
+      --muted: #917a7e;
+      --light-gray: #e8dfe0;
+      --primary: #c27a7f;
+      --primary-dark: #a25b61;
+      --primary-light: #f5e8e9;
+      --accent: #b08d8f;
+      --accent-light: #f0e2e3;
       --card: #ffffff;
-      --warm-pink: #fed7d7;
-      --warm-yellow: #faf089;
       --wrap: 1100px;
       --radius: 16px;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --shadow: 0 4px 20px rgba(60, 40, 42, 0.07);
+      --shadow-hover: 0 8px 30px rgba(60, 40, 42, 0.12);
     }
     
     * { box-sizing: border-box; }
@@ -48,12 +45,11 @@ nd<!DOCTYPE html>
       padding: 0 24px;
     }
 
-    /* Navigation */
     .nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(254, 251, 248, 0.95);
+      background: rgba(253, 248, 247, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--light-gray);
     }
@@ -88,7 +84,7 @@ nd<!DOCTYPE html>
     }
     
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--primary-dark);
       background: var(--primary-light);
     }
     
@@ -106,7 +102,6 @@ nd<!DOCTYPE html>
       transform: translateY(-1px);
     }
 
-    /* Hero Section */
     .hero {
       padding: 100px 0 80px;
       text-align: center;
@@ -148,6 +143,16 @@ nd<!DOCTYPE html>
       line-height: 1.6;
     }
     
+    .hero-subtitle a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--primary);
+    }
+    
+    .hero-subtitle a:hover {
+      color: var(--primary);
+    }
+    
     .cta-button {
       display: inline-flex;
       align-items: center;
@@ -169,7 +174,6 @@ nd<!DOCTYPE html>
       box-shadow: var(--shadow-hover);
     }
 
-    /* Section Styles */
     .section {
       padding: 70px 0;
     }
@@ -202,7 +206,7 @@ nd<!DOCTYPE html>
       padding: 28px;
       box-shadow: var(--shadow);
       transition: all 0.3s ease;
-      border: 1px solid rgba(237, 137, 54, 0.1);
+      border: 1px solid rgba(194, 122, 127, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -236,12 +240,12 @@ nd<!DOCTYPE html>
     }
     
     .card h3 a {
-      color: var(--primary);
+      color: var(--primary-dark);
       text-decoration: none;
     }
     
     .card h3 a:hover {
-      color: var(--primary-dark);
+      color: var(--primary);
     }
     
     .card ul {
@@ -270,7 +274,6 @@ nd<!DOCTYPE html>
       font-weight: 600;
     }
 
-    /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -283,7 +286,7 @@ nd<!DOCTYPE html>
       padding: 28px;
       box-shadow: var(--shadow);
       transition: all 0.3s ease;
-      border: 1px solid rgba(237, 137, 54, 0.1);
+      border: 1px solid rgba(194, 122, 127, 0.1);
     }
     
     .project-card:hover {
@@ -304,7 +307,6 @@ nd<!DOCTYPE html>
       letter-spacing: 0.5px;
     }
 
-    /* Reads Section */
     .reads-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -316,7 +318,7 @@ nd<!DOCTYPE html>
       border-radius: var(--radius);
       padding: 28px;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(237, 137, 54, 0.1);
+      border: 1px solid rgba(194, 122, 127, 0.1);
       transition: all 0.3s ease;
     }
     
@@ -328,7 +330,7 @@ nd<!DOCTYPE html>
     .reads-card h4 {
       font-size: 18px;
       font-weight: 600;
-      color: var(--primary);
+      color: var(--primary-dark);
       margin: 0 0 18px;
       padding-bottom: 8px;
       border-bottom: 2px solid var(--primary-light);
@@ -361,7 +363,6 @@ nd<!DOCTYPE html>
       font-weight: 500;
     }
 
-    /* Contact Section */
     .contact-section {
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
       color: white;
@@ -405,7 +406,7 @@ nd<!DOCTYPE html>
     
     .contact-button.primary {
       background: white;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
     
     .contact-button.primary:hover {
@@ -413,7 +414,6 @@ nd<!DOCTYPE html>
       color: var(--primary-dark);
     }
 
-    /* Footer */
     .footer {
       background: var(--dark);
       color: var(--muted);
@@ -426,14 +426,12 @@ nd<!DOCTYPE html>
       text-decoration: none;
     }
 
-    /* Icons */
     .icon {
       width: 18px;
       height: 18px;
       fill: currentColor;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .container { padding: 0 20px; }
       .nav-links { display: none; }
@@ -450,7 +448,6 @@ nd<!DOCTYPE html>
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="nav">
     <div class="container">
       <div class="nav-content">
@@ -467,31 +464,25 @@ nd<!DOCTYPE html>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-photo">
         <img src="ehlaam.jpg" alt="Ehlaam Imran" />
       </div>
       <h1>Hi, I'm Ehlaam 👋</h1>
-<p class="hero-subtitle">
-  I’m a recent Cornell Engineering Management grad working on AI-driven and other tech-enabled products. 
-  Right now, that includes <strong>DeTICKtor</strong>, a tick-detection project inspired by my friend’s dog, Simba, 
-  and my internship at 
-  <a href="https://expatfile.tax" target="_blank" rel="noopener noreferrer">ExpatFile</a>, 
-  where I’m helping automate U.S. tax workflows with AI.
-  <br><br>
-  Outside of work, I’m really into football, tennis, and Formula 1- I can talk about them for hours. I also love fashion and reading, I spend a lot of my time exploring how creativity and technology intersect, whether that’s through experimenting with AI tools, sketching new ideas, or learning something new like knitting. I love projects that make my life easier :)
-</p>
-<a href="#contact" class="cta-button">Contact Me</a>
-
-      
-       
-      
+      <p class="hero-subtitle">
+        I'm a Cornell Engineering Management grad who builds AI-driven and tech-enabled products. 
+        Right now, I'm co-founding <a href="https://deticktor.com" target="_blank" rel="noopener noreferrer"><strong>DeTICKtor</strong></a>, a tick-detection company inspired by my friend's dog Simba, 
+        and interning at 
+        <a href="https://expatfile.tax" target="_blank" rel="noopener noreferrer">ExpatFile</a>, 
+        where I'm automating U.S. tax workflows with AI.
+        <br><br>
+        Outside of work, I'm into football, tennis, and Formula 1 — I can talk about them for hours. I also spend a lot of time at the intersection of creativity and technology, whether that's experimenting with AI tools, sketching ideas, or picking up something new like knitting. I gravitate toward projects that solve real problems and make everyday life a little easier.
+      </p>
+      <a href="#contact" class="cta-button">Contact Me</a>
     </div>
   </section>
 
-  <!-- Education -->
   <section id="education" class="section">
     <div class="container">
       <h2 class="section-title">Education</h2>
@@ -501,17 +492,16 @@ nd<!DOCTYPE html>
           <h3>Cornell University — Masters in Engineering Management</h3>
           <ul>
             <li><strong>Key coursework:</strong> Product Management, Project Management, AI Applications for Engineering Managers, Data Analytics, Decision Framing & Analytics, Economics & Finance for Engineering Managers, Management Consulting</li>
-            <li>Won Animal Health Hackathon with DeTicktor, then joined <a href="https://www.revithaca.com/hardware/" target="_blank">Rev's Hardware Accelerator Program</a> to bring it to market</li>
+            <li>Won the Animal Health Hackathon with DeTICKtor, then joined <a href="https://www.revithaca.com/hardware/" target="_blank">Rev's Hardware Accelerator Program</a> to take it from concept to company</li>
           </ul>
         </div>
         
         <div class="card">
           <h3>University of Mumbai — B.Tech in Information Technology</h3>
           <ul>
-
-            <li><strong>Smart India Hackathon 2022 winner</strong> — solved real-world challenges for the Gas Authority of India Limited (GAIL) over a 36-hour hackathon. <a href="https://www.linkedin.com/posts/ehlaam-imran-524215189_smartindiahackathon2022-activity-6969691762084753408-NLAA/" target="_blank">See the story</a></li>
-            <li><strong>Published research</strong> in IEEE for a healthtech project, YogAIt. <a href="https://ieeexplore.ieee.org/document/10502646" target="_blank">Read the paper</a></li>
-            <li><strong>Presented at Aavishkar research convention</strong> — made it to the final round at University of Mumbai</li>
+            <li><strong>Smart India Hackathon 2022 winner</strong> — developed a solution for the Gas Authority of India Limited (GAIL) over a 36-hour national hackathon. <a href="https://www.linkedin.com/posts/ehlaam-imran-524215189_smartindiahackathon2022-activity-6969691762084753408-NLAA/" target="_blank">See the story</a></li>
+            <li><strong>Published research</strong> in IEEE on YogAIt, a healthtech project. <a href="https://ieeexplore.ieee.org/document/10502646" target="_blank">Read the paper</a></li>
+            <li><strong>Presented at Aavishkar research convention</strong> — advanced to the final round at University of Mumbai</li>
             <li>Led and mentored the Somaiya Debating Society</li>
           </ul>
         </div>
@@ -519,135 +509,124 @@ nd<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Experience -->
   <section id="experience" class="section">
     <div class="container">
       <h2 class="section-title">Work Experience</h2>
-      <div class="card">
-  <h3><a href="https://expatfile.tax" target="_blank" rel="noopener noreferrer">ExpatFile</a> - AI Engineering Intern</h3>
-  <ul>
-    <li>Working on automating <strong>state tax processing</strong> using AI and intelligent document parsing</li>
-    <li>I'm building internal <strong>data conversion pipelines</strong> to translate XML tax forms into JSON for faster computation</li>
-    <li>I'm currently collaborating with the founding team to enhance <strong>accuracy and scalability</strong> of the tax engine</li>
-  </ul>
-</div>
+
+      <div class="card" style="margin-bottom: 20px;">
+        <h3><a href="https://partumcarenow.com" target="_blank" rel="noopener noreferrer">Partum Care Now</a> — Business Development Intern</h3>
+        <ul>
+          <li>Supported growth strategy and outreach efforts for a maternal health platform focused on improving postpartum care</li>
+          <li>Conducted market research and identified partnership opportunities to expand the company's reach</li>
+          <li>Contributed to go-to-market planning, helping shape how the product connects with healthcare providers and new parents</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 20px;">
+        <h3><a href="https://expatfile.tax" target="_blank" rel="noopener noreferrer">ExpatFile</a> — AI Engineering Intern</h3>
+        <ul>
+          <li>Automating <strong>state tax processing</strong> using AI and intelligent document parsing</li>
+          <li>Building internal <strong>data conversion pipelines</strong> to translate XML tax forms into JSON for faster, more reliable computation</li>
+          <li>Collaborating directly with the founding team to improve the <strong>accuracy and scalability</strong> of the tax engine</li>
+        </ul>
+      </div>
       
       <div class="cards-grid">
         <div class="card">
           <h3><a href="https://www.bayer.com" target="_blank">Bayer</a> — Data Analyst</h3>
           <ul>
-            <li><strong>Nominated for the Baychamp award</strong> for bringing innovative solutions to complex problems</li>
+            <li><strong>Nominated for the Baychamp award</strong> for delivering innovative solutions to complex, cross-functional problems</li>
             <li>Built and maintained <strong>two Power BI dashboards</strong> that gave leadership global visibility into incidents and compliance</li>
-            <li>Collaborated with teams across different time zones to understand business needs and deliver data-driven solutions</li>
+            <li>Worked across time zones with distributed teams to translate business needs into actionable, data-driven insights</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title">Things I'm Building</h2>
-      <p class="section-subtitle">I love creating solutions that make people's lives a little bit better :)</p>
+      <p class="section-subtitle">I care about creating solutions that make people's lives a little bit better</p>
       
-      <!--
-<div class="projects-grid">
-  <div class="project-card">
-    <div class="project-tag">Food & Social Impact</div>
-    <h3><a href="https://suframumbai.framer.website/" target="_blank">Sufra</a></h3>
-    <ul>
-      <li>Connecting food donors with recipients through simple, intuitive mobile flows</li>
-      <li>Currently in customer discovery phase — talking to restaurants, NGOs, and communities to understand real needs</li>
-      <li>Goal: reduce food waste while addressing hunger in urban areas</li>
-    </ul>
-  </div>
-</div>
--->
-
-        
-        <div class="project-card">
-          <div class="project-tag">AI & Hardware</div>
-          <h3><a href="https://deticktor.framer.website/" target="_blank">DeTicktor</a></h3>
-          <ul>
-             What began as a weekend idea at Cornell’s Animal Health Hackathon has now turned into the project I’m most passionate about. Our tick-detection concept won “Most Novel & Innovative Solution,” which gave us the push to keep going. This summer, we joined Rev Ithaca’s Hardware Accelerator Program and spent three months turning the idea into a prototype. Since then, we’ve been working on improving it, talking to pet owners and vets, and exploring what it would take to bring DeTICKtor to real use.
-          </ul>
-        </div>
+      <div class="project-card">
+        <div class="project-tag">AI & Hardware</div>
+        <h3><a href="https://deticktor.com" target="_blank">DeTICKtor, LLC</a></h3>
+        <ul>
+          What started as a weekend idea at Cornell's Animal Health Hackathon has become the project I'm most committed to. Our tick-detection concept won "Most Novel & Innovative Solution," and that validation gave us the confidence to keep building. We joined Rev Ithaca's Hardware Accelerator Program and spent three months turning the idea into a working prototype. Since then, we've formalized as an LLC and have been refining the product, talking to pet owners and veterinarians, and mapping out what it takes to bring DeTICKtor to market.
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Blog -->
-<section id="blog" class="section">
-  <div class="container">
-    <h2 class="section-title">My Writings!</h2>
-    <p class="section-subtitle">Thoughts on books, grad school, tech, and life in general</p>
-    
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-tag">Book Review</div>
-        <h3><a href="https://ehlaamimran.substack.com/p/book-review-northanger-abbey" target="_blank">Northanger Abbey</a></h3>
-        <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"Sometimes, it's refreshing to take a break from the complex and intense, and just enjoy a story about a 17-year-old girl navigating her first romance..."</p>
-        <ul>
-          <li>A review of Jane Austen's charming tale of young love and overactive imagination</li>
-          <li>Reflecting on relatability, personal growth, and the dangers of letting fiction shape reality</li>
-        </ul>
+  <section id="blog" class="section">
+    <div class="container">
+      <h2 class="section-title">My Writings</h2>
+      <p class="section-subtitle">Thoughts on books, grad school, tech, and life in general</p>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-tag">Book Review</div>
+          <h3><a href="https://ehlaamimran.substack.com/p/book-review-northanger-abbey" target="_blank">Northanger Abbey</a></h3>
+          <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"Sometimes, it's refreshing to take a break from the complex and intense, and just enjoy a story about a 17-year-old girl navigating her first romance..."</p>
+          <ul>
+            <li>A review of Jane Austen's charming tale of young love and overactive imagination</li>
+            <li>Reflecting on relatability, personal growth, and the dangers of letting fiction shape reality</li>
+          </ul>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-tag">Grad School Guide</div>
+          <h3><a href="https://ehlaamimran.substack.com/p/navigating-grad-school-applications" target="_blank">Navigating Grad School Applications</a></h3>
+          <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"Applying to grad school while working full-time is no small feat, but with the right approach, it's entirely manageable."</p>
+          <ul>
+            <li>Step-by-step guide based on my Cornell application experience</li>
+            <li>Tips on transcripts, recommendations, GRE prep, and statement of purpose</li>
+          </ul>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-tag">Fashion & Lifestyle</div>
+          <h3><a href="https://ehlaam.substack.com/p/where-my-money-goes-part-1" target="_blank">Where My Money Goes (Part 1)</a></h3>
+          <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"A peek into my fashion spending and the pieces I actually invest in..."</p>
+          <ul>
+            <li>Curating fashion and design choices that bring joy to everyday life</li>
+            <li>Honest thoughts on where it's worth spending (and where it's not)</li>
+          </ul>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-tag">Social Impact</div>
+          <h3><a href="https://ehlaam.substack.com/p/while-indias-financial-capital-wastes" target="_blank">While India's Financial Capital Wastes Food</a></h3>
+          <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"Exploring food waste and hunger in Mumbai..."</p>
+          <ul>
+            <li>A deep dive into food waste challenges in India's financial capital</li>
+            <li>Personal reflections on social impact and potential solutions</li>
+          </ul>
+        </div>
       </div>
       
-      <div class="project-card">
-        <div class="project-tag">Grad School Guide</div>
-        <h3><a href="https://ehlaamimran.substack.com/p/navigating-grad-school-applications" target="_blank">Navigating Grad School Applications</a></h3>
-        <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"Applying to grad school while working full-time is no small feat, but with the right approach, it's entirely manageable."</p>
-        <ul>
-          <li>Step-by-step guide based on my Cornell application experience</li>
-          <li>Tips on transcripts, recommendations, GRE prep, and statement of purpose</li>
-        </ul>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-tag">Fashion & Lifestyle</div>
-        <h3><a href="https://ehlaam.substack.com/p/where-my-money-goes-part-1" target="_blank">Where My Money Goes (Part 1)</a></h3>
-        <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"A peek into my fashion spending and the pieces I actually invest in..."</p>
-        <ul>
-          <li>Curating fashion and design choices that bring joy to everyday life</li>
-          <li>Honest thoughts on where it's worth spending (and where it's not)</li>
-        </ul>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-tag">Social Impact</div>
-        <h3><a href="https://ehlaam.substack.com/p/while-indias-financial-capital-wastes" target="_blank">While India's Financial Capital Wastes Food</a></h3>
-        <p style="color: var(--text); margin: 0 0 16px; font-weight: 400; font-style: italic;">"Exploring food waste and hunger in Mumbai..."</p>
-        <ul>
-          <li>A deep dive into food waste challenges in India's financial capital</li>
-          <li>Personal reflections on social impact and potential solutions</li>
-        </ul>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="https://substack.com/@ehlaam" target="_blank" class="cta-button">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          Read more on Substack
+        </a>
       </div>
     </div>
-    
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="https://substack.com/@ehlaam" target="_blank" class="cta-button">
-        <svg class="icon" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-        </svg>
-        Read more on Substack
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Reads -->
   <section id="reads" class="section">
     <div class="container">
-      <h2 class="section-title">Books (and essays!) I Recommend</h2>
-      <p class="section-subtitle">Stories and ideas that have shaped how I think!</p>
+      <h2 class="section-title">Books (and Essays) I Recommend</h2>
+      <p class="section-subtitle">Stories and ideas that have shaped how I think</p>
       
       <div class="reads-grid">
         <div class="reads-card">
           <h4>Fiction</h4>
           <ul>
             <li><em>The God of Small Things</em> — Arundhati Roy</li>
-           
             <li><em>Northanger Abbey</em> — Jane Austen</li>
             <li><em>Persuasion</em> — Jane Austen</li>
             <li><em>The Picture of Dorian Gray</em> — Oscar Wilde</li>
@@ -662,18 +641,16 @@ nd<!DOCTYPE html>
             <li>"Some Thoughts of the Common Toad" — George Orwell</li>
             <li><em>Poor Economics</em> — Banerjee and Duflo</li>
             <li><em>Naked Statistics</em> — Charles Wheelan</li>
-            
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="contact-section section">
     <div class="container">
-      <h2 class="section-title">Let's Connect!</h2>
-      <p class="section-subtitle">I'd love to chat about product opportunities, interesting problems, or just say hi! :)</p>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">I'd love to chat about product opportunities, interesting problems, or just say hi</p>
       
       <div class="contact-buttons">
         <a href="mailto:eih27@cornell.edu" class="contact-button primary">
@@ -693,7 +670,6 @@ nd<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>© 2025 Ehlaam Imran • <a href="https://ehlaamimran.com">ehlaamimran.com</a></p>
